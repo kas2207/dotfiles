@@ -9,6 +9,7 @@
 dir=~/dotfiles
 olddir=~/dotfiles_old
 files="bashrc vimrc"  # list of files/folders to symlink in homedir
+emacs_files="init.el" # future list of files/folder to symlink in emacs.d
 
 ##############################################################################
 # Functions
@@ -36,10 +37,18 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
+# Move any existing emacs dotfiles to .emacs.d
+for file in $emacs_files; do
+    echo "Moving any existing emacs dotfiles from - to $olddir"
+    mv ~/.emacs.d/$file ~/dotfiles_old/
+    echo "Creating symlink to $file in .emacs.d"
+    ln -s $dir/$file ~/.emacs.d/$file
+done
+
 # Elpy Emacs Python Package Configurations
 echo "Installing Python packages globally for help with PEP standards"
-pip install jedi
-pip install flake8
-pip install importmagic
-pip install autopep8
-pip install yapf
+sudo pip install jedi
+sudo pip install flake8
+sudo pip install importmagic
+sudo pip install autopep8
+sudo pip install yapf
