@@ -14,6 +14,7 @@
                    better-defaults
                    cider
                    clojure-mode
+                   elm-mode
                    elpy
                    flycheck
                    haskell-mode
@@ -99,6 +100,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes nil)
+ '(org-agenda-files (quote ("~/Documents/Notes/Journal/2016-03-04.org")))
  '(send-mail-function (quote smtpmail-send-it))
  '(smtpmail-smtp-server "smtp.gmail.com")
  '(smtpmail-smtp-service 25)
@@ -139,6 +141,10 @@
 ;; Auto Complete
 (require 'auto-complete)
 (global-auto-complete-mode t)
+
+
+;; Elm-mode
+(require 'elm-mode)
 
 
 ;; Org-mode
