@@ -24,6 +24,7 @@
                    paredit
                    py-autopep8
                    racket-mode
+                   yaml-mode
                    zenburn-theme
                    ))
   (unless (package-installed-p package)
@@ -273,3 +274,7 @@ an empty line between the cursor and the text. Move the cursor to the new line."
  (quote org-babel-load-languages)
  (quote ((emacs-lisp . t)
          (dot . t))))
+
+;; Yaml
+(add-hook 'yaml-mode-hook
+          (lambda () (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
