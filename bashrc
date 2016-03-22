@@ -1,6 +1,3 @@
-# added by Anaconda 2.3.0 installer
-#export PATH=/home/kyleschmidt/anaconda/bin:$PATH
-
 # added JAVA_HOME ENV
 export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_45
 

@@ -47,8 +47,17 @@ done
 
 # Elpy Emacs Python Package Configurations
 echo "Installing Python packages globally for help with PEP standards"
+sudp apt-get install python-pip
 sudo pip install jedi
 sudo pip install flake8
 sudo pip install importmagic
 sudo pip install autopep8
 sudo pip install yapf
+
+# Install Racket
+echo "Installing Racket"
+sudo apt-get install racket
+
+# Install surfraw for broswer interaction via Emacs Helm mode
+echo "Installing surfraw for internet surfing via Emacs and Terminal"
+sudo apt-get install surfraw

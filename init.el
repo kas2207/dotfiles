@@ -22,7 +22,9 @@
                    helm-projectile
                    markdown-mode
                    paredit
-                   py-autopep8))
+                   py-autopep8
+                   racket-mode
+                   ))
   (unless (package-installed-p package)
     (package-install package)))
 
