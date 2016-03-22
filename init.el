@@ -37,10 +37,7 @@
 
 ;; Theme Configurations
 (add-hook 'after-init-hook
-          (lambda ()
-            (load-theme 'zenburn t)
-            )
-          )
+          (lambda () (load-theme 'zenburn t)))
 
 ;; Enable Line and Column Numbering
 (line-number-mode 1)
