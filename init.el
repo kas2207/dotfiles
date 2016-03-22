@@ -21,6 +21,7 @@
                    helm
                    helm-projectile
                    markdown-mode
+                   paredit
                    py-autopep8))
   (unless (package-installed-p package)
     (package-install package)))
@@ -142,6 +143,16 @@
 (require 'auto-complete)
 (global-auto-complete-mode t)
 
+;; Clojure-Mode
+(autoload 'clojure-mode "clojure-mode" "A major mode for Clojure" t)
+(add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
+(add-to-list 'auto-mode-alist '("\\.cljs$" . clojure-mode))
+(add-to-list 'auto-mode-alist '("\\.cljc$" . clojure-mode))
+(add-to-list 'auto-mode-alist '("\\.edn$" . clojure-mode))
+(add-to-list 'auto-mode-alist '("\\.dtm$" . clojure-mode))
+(add-to-list 'auto-mode-alist '("\\.boot$" . clojure-mode))
+
+(add-hook 'clojure-mode-hook #'paredit-mode)
 
 ;; Elm-mode
 (require 'elm-mode)
@@ -153,6 +164,38 @@
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c b") 'org-iswitchb)
 
+
+;;Paredit
+(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
+(add-hook 'emacs-lisp-mode-hook #'enable-paredit-mode)
+(add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
+(add-hook 'ielm-mode-hook #'enable-paredit-mode)
+(add-hook 'lisp-mode-hook #'enable-paredit-mode)
+(add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
+(add-hook 'scheme-mode-hook #'enable-paredit-mode)
+
+(require 'eldoc)
+(eldoc-add-command
+ 'paredit-backward-delete
+ 'paredit-close-around)
+
+(defvar electrify-return-match
+  "[\]}\)\"]"
+  "If this regexp matches the text after the cursor, do an \"electric\"
+  return.")
+
+(defun electrify-return-if-match
+  (arg)
+  "If the text after the cursor matches `electrify-return-match then open and indent
+an empty line between the cursor and the text. Move the cursor to the new line."
+  (interactive "P")
+  (let ((case-fold-search nil))
+    (if (looking-at electrify-return-match)
+        (save-excursion (newline-and-indent)))
+    (newline arg)
+    (indent-according-to-mode)))
+
+(global-set-key (kbd "RET") 'electrify-return-if-match)
 
 ;;Python
 (elpy-enable)
