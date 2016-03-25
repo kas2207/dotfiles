@@ -47,7 +47,7 @@ done
 
 # Elpy Emacs Python Package Configurations
 echo "Installing Python packages globally for help with PEP standards"
-sudp apt-get install python-pip
+sudo apt-get install python-pip
 sudo pip install jedi
 sudo pip install flake8
 sudo pip install importmagic
