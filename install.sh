@@ -8,7 +8,7 @@
 ##############################################################################
 dir=~/dotfiles
 olddir=~/dotfiles_old
-files="bashrc vimrc"  # list of files/folders to symlink in homedir
+files="bashrc screenrc vimrc"  # list of files/folders to symlink in homedir
 emacs_files="init.el" # future list of files/folder to symlink in emacs.d
 
 ##############################################################################
