@@ -92,10 +92,7 @@
     (tool-bar-mode -1))
 
 ;; Default text mode
-(setq default-major-mode 'text-mode)
-
-;; Display time and date
-(setq display-time-day-and-date 'true)
+(setq default-major-mode 'org-mode)
 
 ;; Custom
 (custom-set-variables
@@ -108,7 +105,6 @@
  '(custom-safe-themes (quote ("316d29f8cd6ca980bf2e3f1c44d3a64c1a20ac5f825a167f76e5c619b4e92ff4" default)))
  '(fci-rule-color "#383838")
  '(nrepl-message-colors (quote ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
- '(org-agenda-files (quote ("~/Documents/Notes/Journal/2016-03-04.org")))
  '(send-mail-function (quote smtpmail-send-it))
  '(smtpmail-smtp-server "smtp.gmail.com")
  '(smtpmail-smtp-service 25)
