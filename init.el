@@ -17,13 +17,16 @@
                    elm-mode
                    elpy
                    flycheck
+                   geiser
                    haskell-mode
                    helm
+                   helm-dash
                    helm-projectile
                    markdown-mode
                    paredit
                    py-autopep8
                    racket-mode
+                   rainbow-delimiters
                    yaml-mode
                    zenburn-theme
                    ))
