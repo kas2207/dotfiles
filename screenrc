@@ -1,11 +1,40 @@
+# Use default shell
 shell -${SHELL}
-defscrollback 5000
+
 startup_message off
+
+# More than 100 lines scrollback
+defscrollback 10000
+
 hardstatus on
 hardstatus alwayslastline
-hardstatus string '%{= kG}[ %{G}%H %{G}][%= %{= kw}%-Lw%{r}(%{W}%n%f %t%?(%u)%?%{r})%{w}%+Lw%?%= %{G}][%{B}%Y-%m-%d %{W}%c %{G}]'
+hardstatus string "%{=} %-w%{+b c}%n*%t%{-b m}%{w}%+w %= %{b}%H %{= G} %D %d %M %c "
 
 term screen-256color
+
+# C-a and C-e for start/end of line
+markkeys "0=^a:\$=^e"
+
+# Special hack for C-e, since it should go past the last char.
+# -m means this is for copy mode only.
+bindkey =m ^e stuff "$^f"
+
+# M-< and M-> for start/end of buffer
+bindkey -m "^[<" stuff "g"
+bindkey -m "^[>" stuff "G"
+
+# C-p and C-n for up/down single line
+markkeys "j=^n:k=^p"
+
+# C-b and C-f for back/forward single char
+markkeys "h=^b:l=^f"
+
+# M-b and M-f for back/forward a word at a time
+bindkey -m "^[f" stuff "e"
+bindkey -m "^[b" stuff "b"
+
+# show activity
+activity "<%n>"
 
 # Default screens
 screen -t Gauss1            0

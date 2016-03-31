@@ -32,7 +32,7 @@ PS1="${TITLEBAR}\
 
 $RED\u@\h:$WHITE\w$BLUE\$(parse_git_branch)\
 
-$WHITE> "
+$WHITE$ "
 
 PS2='> '
 PS4='+ '
