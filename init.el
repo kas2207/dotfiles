@@ -1,5 +1,23 @@
 ;; Kyle's Emacs Config
 
+;; Turn off mouse interface early in startup to avoid momentary display
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+
+;; Turn off welcome screen
+(setq inhibit-startup-message t)
+(setq font-lock-verbose nil)
+
+;; Unicode FTW
+(setq locale-coding-system 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-selection-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+(set-language-environment "UTF-8")
+(setq current-language-environment "UTF-8")
+
 (require 'package)
 (setq package-archives
       '(("gnu" . "https://elpa.gnu.org/packages/")
@@ -87,12 +105,6 @@
 
 ;; Stop blinking cursor
 (blink-cursor-mode 0)
-
-;; Turn off the menu and tool bar
-(menu-bar-mode -1)
-
-(if (fboundp 'tool-bar-mode)
-    (tool-bar-mode -1))
 
 ;; Default text mode
 (setq default-major-mode 'org-mode)
