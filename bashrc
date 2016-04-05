@@ -57,7 +57,7 @@ function git_branch {
 
 PS1_DIR="\
 
-\[$BCYAN\]\u@\h:\[$BWHITE\]\w\[$BLUE\]"
+\[$BCYAN\]\u@\h: \[$BWHITE\]\w "
 
 PS1_GIT="\[\$(git_color)\]\[$BOLD\]\$(git_branch)\[$BOLD\]\[$COLOR_RESET\]"
 
