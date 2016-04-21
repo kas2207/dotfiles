@@ -41,12 +41,17 @@
                    helm
                    helm-dash
                    helm-projectile
+                   js2-mode
+                   ac-js2
                    markdown-mode
                    paredit
+                   paredit-everywhere
                    py-autopep8
                    racket-mode
                    rainbow-delimiters
+                   web-beautify
                    yaml-mode
+                   yasnippet
                    zenburn-theme
                    ))
   (unless (package-installed-p package)
@@ -59,8 +64,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Theme Configurations
-(add-hook 'after-init-hook
-          (lambda () (load-theme 'zenburn t)))
+;; (add-hook 'after-init-hook
+;;           (lambda () (load-theme 'zenburn t)))
 
 ;; Enable Line and Column Numbering
 (line-number-mode 1)
@@ -155,50 +160,62 @@
   (detabify-buffer)
   (delete-trailing-whitespace))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Paredit with non lisp mode
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defun my-paredit-nonlisp ()
+  "Turn on paredit mode for non-lisps."
+  (interactive)
+  (set (make-local-variable 'paredit-space-for-delimiter-predicates)
+       '((lambda (endp delimiter) nil)))
+  (paredit-mode 1))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; Email
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(require 'mu4e)
+;; (require 'mu4e)
 
-;; default
-(setq mu4e-maildir "~/Maildir")
-(setq mu4e-drafts-folder "/[Gmail].Drafts")
-(setq mu4e-sent-folder   "/[Gmail].Sent Mail")
-(setq mu4e-trash-folder  "/[Gmail].Trash")
+;; ;; default
+;; (setq mu4e-maildir "~/Maildir")
+;; (setq mu4e-drafts-folder "/[Gmail].Drafts")
+;; (setq mu4e-sent-folder   "/[Gmail].Sent Mail")
+;; (setq mu4e-trash-folder  "/[Gmail].Trash")
 
-;; don't save message to Sent Messages, Gmail/IMAP takes care of this
-(setq mu4e-sent-messages-behavior 'delete)
+;; ;; don't save message to Sent Messages, Gmail/IMAP takes care of this
+;; (setq mu4e-sent-messages-behavior 'delete)
 
-;; setup some handy shortcuts
-;; you can quickly switch to your Inbox -- press ``ji''
-;; then, when you want archive some messages, move them to
-;; the 'All Mail' folder by pressing ``ma''.
+;; ;; setup some handy shortcuts
+;; ;; you can quickly switch to your Inbox -- press ``ji''
+;; ;; then, when you want archive some messages, move them to
+;; ;; the 'All Mail' folder by pressing ``ma''.
 
-(setq mu4e-maildir-shortcuts
-      '( ("/INBOX"               . ?i)
-         ("/[Gmail].Sent Mail"   . ?s)
-         ("/[Gmail].Trash"       . ?t)
-         ("/[Gmail].All Mail"    . ?a)))
+;; (setq mu4e-maildir-shortcuts
+;;       '( ("/INBOX"               . ?i)
+;;          ("/[Gmail].Sent Mail"   . ?s)
+;;          ("/[Gmail].Trash"       . ?t)
+;;          ("/[Gmail].All Mail"    . ?a)))
 
-;; allow for updating mail using 'U' in the main view:
-(setq mu4e-get-mail-command "offlineimap")
+;; ;; allow for updating mail using 'U' in the main view:
+;; (setq mu4e-get-mail-command "offlineimap")
 
-(setq
- user-email-address "kyle.a.schmidt@gmail.com"
- user-full-name "Kyle Schmidt")
+;; (setq
+;;  user-email-address "kyle.a.schmidt@gmail.com"
+;;  user-full-name "Kyle Schmidt")
 
-(require 'smtpmail)
-;; alternatively, for emacs-24 you can use:
-(setq message-send-mail-function 'smtpmail-send-it
-    smtpmail-stream-type 'starttls
-    smtpmail-default-smtp-server "smtp.gmail.com"
-    smtpmail-smtp-server "smtp.gmail.com"
-    smtpmail-smtp-service 587)
+;; (require 'smtpmail)
+;; ;; alternatively, for emacs-24 you can use:
+;; (setq message-send-mail-function 'smtpmail-send-it
+;;     smtpmail-stream-type 'starttls
+;;     smtpmail-default-smtp-server "smtp.gmail.com"
+;;     smtpmail-smtp-server "smtp.gmail.com"
+;;     smtpmail-smtp-service 587)
 
-;; don't keep message buffers around
-(setq message-kill-buffer-on-exit t)
+;; ;; don't keep message buffers around
+;; (setq message-kill-buffer-on-exit t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -206,9 +223,17 @@
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+
 ;; Auto Complete
+(require 'yasnippet)
+(yas-global-mode 1)
 (require 'auto-complete)
+(require 'auto-complete-config)
 (global-auto-complete-mode t)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+(ac-config-default)
+(ac-set-trigger-key "TAB")
+(ac-set-trigger-key "<tab>")
 
 ;; Clojure-Mode
 (autoload 'clojure-mode "clojure-mode" "A major mode for Clojure" t)
@@ -224,13 +249,42 @@
 ;; Elm-mode
 (require 'elm-mode)
 
+;; Javascript
+(add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
+(add-hook 'js-mode-hook 'js2-minor-mode)
+(add-hook 'js2-mode-hook 'ac-js2-mode)
+(setq js2-highlight-level 3)
+
+(add-hook 'js-mode-hook 'paredit-everywhere-mode)
+
+(require 'flycheck)
+(add-hook 'js-mode-hook
+          (lambda () (flycheck-mode t)))
+
+;;(require 'web-beautify) ;; Not necessary if using ELPA package
+(eval-after-load 'js2-mode
+  '(define-key js2-mode-map (kbd "C-c b") 'web-beautify-js))
+;; Or if you're using 'js-mode' (a.k.a 'javascript-mode')
+;; (eval-after-load 'js
+;;   '(define-key js-mode-map (kbd "C-c b") 'web-beautify-js))
+
+(eval-after-load 'json-mode
+  '(define-key json-mode-map (kbd "C-c b") 'web-beautify-js))
+
+(eval-after-load 'sgml-mode
+  '(define-key html-mode-map (kbd "C-c b") 'web-beautify-html))
+
+(eval-after-load 'web-mode
+  '(define-key web-mode-map (kbd "C-c b") 'web-beautify-html))
+
+(eval-after-load 'css-mode
+  '(define-key css-mode-map (kbd "C-c b") 'web-beautify-css))
 
 ;; Org-mode
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c b") 'org-iswitchb)
-
 
 ;;Paredit
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)

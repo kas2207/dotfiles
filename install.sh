@@ -54,6 +54,11 @@ sudo pip install importmagic
 sudo pip install autopep8
 sudo pip install yapf
 
+# JavaScript Helpers
+sudo apt-get install npm
+sudo npm install -g jshint
+sudo npm install -g js-beautify
+
 # Install Racket
 echo "Installing Racket"
 sudo apt-get install racket

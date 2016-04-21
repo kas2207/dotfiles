@@ -1,8 +1,14 @@
+PWD="`pwd`"
+
 # added JAVA_HOME ENV
 export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_45
 
 # Added Terraform
 export PATH=$PATH:/usr/terraform
+
+# Conkeror
+export PATH=$PATH:${PWD}
+alias conkeror="(conkeror &)"
 
 # Lazy
 alias today="date +%F"
