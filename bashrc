@@ -18,6 +18,7 @@ alias update="sudo apt-get update && sudo apt-get upgrade"
 export PATH=$PATH:~/.local/bin/
 
 # Colors
+BBLACK="\033[1;30m"
 RED="\033[0;31m"
 YELLOW="\033[0;33m"
 GREEN="\033[0;32m"
@@ -63,12 +64,12 @@ function git_branch {
 
 PS1_DIR="\
 
-\[$BCYAN\]\u@\h: \[$BWHITE\]\w "
+\[$BCYAN\]\u@\h: \[$BLUE\]\w "
 
 PS1_GIT="\[\$(git_color)\]\[$BOLD\]\$(git_branch)\[$BOLD\]\[$COLOR_RESET\]"
 
 PS1_END="\
 
-\[$BWHITE\]$ "
+\[$BBLACK\]$ "
 
 PS1="${PS1_DIR}${PS1_GIT}${PS1_END}"
