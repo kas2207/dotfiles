@@ -1,0 +1,5 @@
+require("new-tabs.js");
+require("session.js");
+
+var session_auto_save_file = "auto-save";
+var session_auto_save_auto_load = true;
