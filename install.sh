@@ -9,7 +9,7 @@
 dir=~/dotfiles
 olddir=~/dotfiles_old
 files="bashrc screenrc vimrc conkerorrc"  # list of files/folders to symlink in homedir
-emacs_files="init.el" # future list of files/folder to symlink in emacs.d
+emacs_files="emacs.d" # future list of files/folder to symlink in emacs.d
 
 ##############################################################################
 # Functions
@@ -40,9 +40,9 @@ done
 # Move any existing emacs dotfiles to .emacs.d
 for file in $emacs_files; do
     echo "Moving any existing emacs dotfiles from - to $olddir"
-    mv ~/.emacs.d/$file ~/dotfiles_old/
+    rm -rf ~/.$file/
     echo "Creating symlink to $file in .emacs.d"
-    ln -s $dir/$file ~/.emacs.d/$file
+    ln -s $dir/$file ~/.$file
 done
 
 # Elpy Emacs Python Package Configurations
