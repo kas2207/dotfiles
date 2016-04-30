@@ -38,12 +38,10 @@ for file in $files; do
 done
 
 # Move any existing emacs dotfiles to .emacs.d
-for file in $emacs_files; do
-    echo "Moving any existing emacs dotfiles from - to $olddir"
-    rm -rf ~/.$file/
-    echo "Creating symlink to $file in .emacs.d"
-    ln -s $dir/$file ~/.$file
-done
+echo "Moving any existing emacs dotfiles from - to $olddir"
+rm -rf ~/.$emacs.d
+echo "Creating symlink to $file in .emacs.d"
+ln -s $dir/$emacs.d ~/.$emacs.d
 
 # Elpy Emacs Python Package Configurations
 echo "Installing Python packages globally for help with PEP standards"
