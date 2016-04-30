@@ -7,7 +7,6 @@
 
 ;; Turn off welcome screen
 (setq inhibit-startup-message t)
-(setq font-lock-verbose nil)
 
 ;; Unicode FTW
 (setq locale-coding-system 'utf-8)
@@ -63,10 +62,6 @@
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Theme Configurations
-;; (add-hook 'after-init-hook
-;;           (lambda () (load-theme 'zenburn t)))
-
 ;; Enable Line and Column Numbering
 (line-number-mode 1)
 (column-number-mode 1)
@@ -106,116 +101,12 @@
 
 (set-bar-cursor)
 
-;; Single space ends a sentence
-(setq sentence-end-double-space nil)
-
 ;; Stop blinking cursor
 (blink-cursor-mode 0)
 
 ;; Default text mode
 (setq default-major-mode 'org-mode)
 
-;; Custom
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector ["#3F3F3F" "#CC9393" "#7F9F7F" "#F0DFAF" "#8CD0D3" "#DC8CC3" "#93E0E3" "#DCDCCC"])
- '(custom-enabled-themes nil)
- '(custom-safe-themes (quote ("316d29f8cd6ca980bf2e3f1c44d3a64c1a20ac5f825a167f76e5c619b4e92ff4" default)))
- '(fci-rule-color "#383838")
- '(nrepl-message-colors (quote ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
- '(send-mail-function (quote smtpmail-send-it))
- '(smtpmail-smtp-server "smtp.gmail.com")
- '(smtpmail-smtp-service 25)
- '(transient-mark-mode nil)
- '(vc-annotate-background "#2B2B2B")
- '(vc-annotate-color-map (quote ((20 . "#BC8383") (40 . "#CC9393") (60 . "#DFAF8F") (80 . "#D0BF8F") (100 . "#E0CF9F") (120 . "#F0DFAF") (140 . "#5F7F5F") (160 . "#7F9F7F") (180 . "#8FB28F") (200 . "#9FC59F") (220 . "#AFD8AF") (240 . "#BFEBBF") (260 . "#93E0E3") (280 . "#6CA0A3") (300 . "#7CB8BB") (320 . "#8CD0D3") (340 . "#94BFF3") (360 . "#DC8CC3"))))
- '(vc-annotate-very-old-color "#DC8CC3"))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(highlight-indentation-current-column-face ((t nil)))
- '(highlight-indentation-face ((t nil))))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;; Whitespace cleanup and display
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; Detabify
-(defun detabify-buffer ()
-  "Calls untabify on the current buffer"
-  (interactive)
-  (untabify (point-min) (point-max)))
-
-;; Whitespace
-(defun clean-up-whitespace ()
-  "Calls detabify-buffer and delete-trailing-whitespace on the current buffer."
-  (interactive)
-  (detabify-buffer)
-  (delete-trailing-whitespace))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;; Paredit with non lisp mode
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(defun my-paredit-nonlisp ()
-  "Turn on paredit mode for non-lisps."
-  (interactive)
-  (set (make-local-variable 'paredit-space-for-delimiter-predicates)
-       '((lambda (endp delimiter) nil)))
-  (paredit-mode 1))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;; Email
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; (require 'mu4e)
-
-;; ;; default
-;; (setq mu4e-maildir "~/Maildir")
-;; (setq mu4e-drafts-folder "/[Gmail].Drafts")
-;; (setq mu4e-sent-folder   "/[Gmail].Sent Mail")
-;; (setq mu4e-trash-folder  "/[Gmail].Trash")
-
-;; ;; don't save message to Sent Messages, Gmail/IMAP takes care of this
-;; (setq mu4e-sent-messages-behavior 'delete)
-
-;; ;; setup some handy shortcuts
-;; ;; you can quickly switch to your Inbox -- press ``ji''
-;; ;; then, when you want archive some messages, move them to
-;; ;; the 'All Mail' folder by pressing ``ma''.
-
-;; (setq mu4e-maildir-shortcuts
-;;       '( ("/INBOX"               . ?i)
-;;          ("/[Gmail].Sent Mail"   . ?s)
-;;          ("/[Gmail].Trash"       . ?t)
-;;          ("/[Gmail].All Mail"    . ?a)))
-
-;; ;; allow for updating mail using 'U' in the main view:
-;; (setq mu4e-get-mail-command "offlineimap")
-
-;; (setq
-;;  user-email-address "kyle.a.schmidt@gmail.com"
-;;  user-full-name "Kyle Schmidt")
-
-;; (require 'smtpmail)
-;; ;; alternatively, for emacs-24 you can use:
-;; (setq message-send-mail-function 'smtpmail-send-it
-;;     smtpmail-stream-type 'starttls
-;;     smtpmail-default-smtp-server "smtp.gmail.com"
-;;     smtpmail-smtp-server "smtp.gmail.com"
-;;     smtpmail-smtp-service 587)
-
-;; ;; don't keep message buffers around
-;; (setq message-kill-buffer-on-exit t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -245,9 +136,6 @@
 (add-to-list 'auto-mode-alist '("\\.boot$" . clojure-mode))
 
 (add-hook 'clojure-mode-hook #'paredit-mode)
-
-;; Elm-mode
-(require 'elm-mode)
 
 ;; Javascript
 (add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
@@ -286,6 +174,12 @@
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c b") 'org-iswitchb)
 
+(add-to-list 'auto-mode-alist '("\\.txt\\'" . org-mode))
+(org-babel-do-load-languages
+ (quote org-babel-load-languages)
+ (quote ((emacs-lisp . t)
+         (dot . t))))
+
 ;;Paredit
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
 (add-hook 'emacs-lisp-mode-hook #'enable-paredit-mode)
@@ -320,7 +214,6 @@ an empty line between the cursor and the text. Move the cursor to the new line."
 
 ;;Python
 (elpy-enable)
-(elpy-use-ipython)
 
 (when (require 'flycheck nil t)
   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
@@ -382,13 +275,6 @@ an empty line between the cursor and the text. Move the cursor to the new line."
 (require 'ac-helm)
 (global-set-key (kbd "C-:") 'ac-complete-with-helm)
 (define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-helm)
-
-;; Org Mode
-(add-to-list 'auto-mode-alist '("\\.txt\\'" . org-mode))
-(org-babel-do-load-languages
- (quote org-babel-load-languages)
- (quote ((emacs-lisp . t)
-         (dot . t))))
 
 ;; Yaml
 (add-hook 'yaml-mode-hook

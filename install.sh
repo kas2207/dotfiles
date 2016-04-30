@@ -55,27 +55,18 @@ sudo pip install autopep8
 sudo pip install yapf
 sudo pip install jsbeautifier
 
+# Install Racket
+sudo apt-get install racket
+
 # JavaScript Helpers
 sudo apt-get install npm
 sudo npm install -g jshint
 sudo npm install -g js-beautify
 sudo npm install -g csslint
 
-# Install Racket
-echo "Installing Racket"
-sudo apt-get install racket
-
 # Install surfraw for broswer interaction via Emacs Helm mode
 echo "Installing surfraw for internet surfing via Emacs and Terminal"
 sudo apt-get install surfraw
-
-# Install Lua
-echo "Install Lua for Flymake-lua"
-sudo apt-get install lua5.2
-
-# Install SBCL
-echo "Installing SBCL for use with slime"
-sudo apt-get install sbcl
 
 # Install Tidy
 echo "Installing tidy for use with web-mode"
@@ -86,8 +77,4 @@ echo "Installing ImageMagick for use with org-mode"
 sudo aptitude install imagemagick
 
 # Utilities
-sudo apt-get install zip unzip xsel cmake clang
-sudo apt-get install build-essential ctags
-sudo apt-get install ncurses-dev
-sudo apt-get install sdcv
-sudo apt-get install curl
+sudo apt-get install zip unzip build-essential curl
