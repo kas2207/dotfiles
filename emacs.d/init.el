@@ -20,22 +20,39 @@
   :load-path "site-lisp/helm"
   :bind (("C-c h"   . helm-command-prefix)
          ("M-x"     . helm-M-x)
-         ("C-x C-f" . helm-find-files))
+         ("C-x C-f" . helm-find-files)
+	 ("C-h a"   . helm-apropos)
+	 ("C-x b"   . helm-mini)
+	 ("M-y"     . helm-show-kill-ring)
+	 ("C-c h o" . helm-occur)
+	 ("C-h SPC" . helm-all-mark-rings)
+	 ("C-c h x" . helm-register)
+	 ("C-c h g" . helm-google-suggest)
+	 :map minibuffer-local-map
+	 ("C-c C-l"    . helm-minibuffer-history))
+  :init
+  (setq helm-buffers-fuzzy-matching t
+	helm-recentf-fuzzy-match t
+	helm-semantic-fuzzy-match t
+	helm-imenu-fuzzy-match t
+	helm-locate-fuzzy-match t
+	helm-apropos-fuzzy-match t
+	helm-lisp-fuzzy-completion t)
   :config
-  ;;(use-package helm-commands)
-  ;;(use-package helm-files)
-  ;;(use-package helm-buffers)
-  ;;(use-package helm-mode
-    ;; :diminish helm-mode
-    ;; :init
-    ;; (helm-mode 1))
-
+  (use-package helm-commands)
+  (use-package helm-files)
+  (use-package helm-buffers)
+  (use-package helm-mode
+     :diminish helm-mode
+     :init
+     (helm-mode 1))
   (use-package helm-multi-match)
 
   (helm-autoresize-mode 1)
 
-  :bind (:map minibuffer-local-map
-              ("C-c C-l"    . minibuffer-local-map))
+  (bind-key "<tab>" #'helm-execute-persistent-action helm-map)
+  (bind-key "C-i" #'helm-execute-persistent-action helm-map)
+  (bind-key "C-z" #'helm-select-action helm-map)
 
   (when (executable-find "curl")
     (setq helm-google-suggest-use-curl-p t)))
