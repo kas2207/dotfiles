@@ -27,9 +27,7 @@
 	 ("C-c h o" . helm-occur)
 	 ("C-h SPC" . helm-all-mark-rings)
 	 ("C-c h x" . helm-register)
-	 ("C-c h g" . helm-google-suggest)
-	 :map minibuffer-local-map
-	 ("C-c C-l"    . helm-minibuffer-history))
+	 ("C-c h g" . helm-google-suggest))
   :init
   (setq helm-buffers-fuzzy-matching t
 	helm-recentf-fuzzy-match t
@@ -53,7 +51,8 @@
   (bind-key "<tab>" #'helm-execute-persistent-action helm-map)
   (bind-key "C-i" #'helm-execute-persistent-action helm-map)
   (bind-key "C-z" #'helm-select-action helm-map)
-
+  (bind-key "C-c C-l" #'helm-minibuffer-history minibuffer-local-map)
+  
   (when (executable-find "curl")
     (setq helm-google-suggest-use-curl-p t)))
 ;; ;;;; Turn off mouse interface early in startup to avoid momentary display
