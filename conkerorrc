@@ -4,6 +4,8 @@
 require("new-tabs.js");
 require("session.js");
 require("mode-line.js");
+load_paths.unshift("chrome://conkeror-contrib/content/");
+require("mode-line-buttons.js");
 
 // Save Session
 var session_auto_save_file = "auto-save";
@@ -18,22 +20,15 @@ editor_shell_command = "emacs";
 view_source_use_external_editor = true;
 
 // Mode Line
-mode_line_mode(false);
-/*
-remove_hook("mode_line_hook", mode_line_adder(current_buffer_name_widget));
-remove_hook("mode_line_hook", mode_line_adder(clock_widget));
-load_paths.unshift("chrome://conkeror-contrib/content/");
-require("mode-line-buttons.js");
 mode_line_add_buttons(standard_mode_line_buttons, true);
 remove_hook("mode_line_hook", mode_line_adder(current_buffer_scroll_position_widget));
-add_hook("mode_line_hook", mode_line_adder(downloads_status_widget));
-*/
+remove_hook("mode_line_hook", mode_line_adder(clock_widget));
 
 // Webjumps
 define_webjump("python3", "http://docs.python.org/py3k/search.html?q=%s");
-
-// Content Handlers
-//content_handlers.set("application/pdf", content_handler_open); // Open the document, prompting for a command
+define_webjump("github", "http://github.com");
+define_webjump("planet-emacs", "http://planet.emacsen.org/");
+define_webjump("safari", "http://safaribooksonline.com");
 
 //User Agent
 session_pref("general.useragent.compatMode.firefox", true);
