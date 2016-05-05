@@ -39,9 +39,9 @@ done
 
 # Move any existing emacs dotfiles to .emacs.d
 echo "Moving any existing emacs dotfiles from - to $olddir"
-rm -rf ~/.$emacs.d
+rm -rf ~/.$emacs_files
 echo "Creating symlink to $file in .emacs.d"
-ln -s $dir/$emacs.d ~/.$emacs.d
+ln -s $dir/$emacs_files ~/.$emacs_files
 
 # Elpy Emacs Python Package Configurations
 echo "Installing Python packages globally for help with PEP standards"
