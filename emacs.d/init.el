@@ -14,6 +14,18 @@
 (setq custom-file (locate-user-emacs-file "settings.el"))
 (load custom-file)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Configure Dependencies ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package dash :defer t :load-path "site-lisp/dash")
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Configure Global Vars ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(setq sql-mysql-program "/usr/bin/mysql")
+
 ;;;;;;;;;;;;;;;;;;;
 ;; Load Packages ;;
 ;;;;;;;;;;;;;;;;;;;
@@ -63,7 +75,7 @@
   :load-path ("site-lisp/magit/lisp"
 	      "site-lisp/with-editor")
   :bind ("C-x g" . magit-status)
-  :init (add-hook 'magit-mode-hook 'h1-line-mode)
+  :init (add-hook 'magit-mode-hook 'hl-line-mode)
 
   :config
   (use-package magit-backup
