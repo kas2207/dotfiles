@@ -37,7 +37,3 @@ bindkey -m "^[b" stuff "b"
 activity "<%n>"
 
 # Default screens
-screen -t Gauss1            0
-screen -t Gauss2            1
-screen -t axa               2           ssh axa
-screen -t app               3           ssh appserver
