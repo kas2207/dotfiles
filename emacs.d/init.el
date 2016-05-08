@@ -20,10 +20,10 @@
 
 (use-package dash :defer t :load-path "site-lisp/dash")
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Configure Global Vars ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (setq sql-mysql-program "/usr/bin/mysql")
 
 ;;;;;;;;;;;;;;;;;;;
