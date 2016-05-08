@@ -58,3 +58,20 @@
   
   (when (executable-find "curl")
     (setq helm-google-suggest-use-curl-p t)))
+
+(use-package magit
+  :load-path ("site-lisp/magit/lisp"
+	      "site-lisp/with-editor")
+  :bind ("C-x g" . magit-status)
+  :init (add-hook 'magit-mode-hook 'h1-line-mode)
+
+  :config
+  (use-package magit-backup
+    :disabled t
+    :commands magit-backup-mode
+    :config
+    (magit-backup-mode -1))
+  (use-package magit-commit
+    :config
+    (remove-hook 'server-switch-hook 'magit-commit-diff))
+  (bind-key "U" #'magit-unstage-all magit-mode-map))
