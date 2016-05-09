@@ -16,6 +16,7 @@
 	 ("C-h SPC" . helm-all-mark-rings)
 	 ("C-c h x" . helm-register)
 	 ("C-c h g" . helm-google-suggest))
+  :diminish helm-mode
   :init
   (setq helm-buffers-fuzzy-matching t
 	helm-recentf-fuzzy-match t

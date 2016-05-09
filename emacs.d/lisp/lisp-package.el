@@ -39,7 +39,8 @@
 ;; Load Modules
 (setq ks/available-modules
       '(ks-helm
-	ks-magit))
+	ks-magit
+	ks-org))
 
 (defun ks/load-modules ()
   (interactive)

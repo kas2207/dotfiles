@@ -68,5 +68,8 @@
 
 (set-box-cursor)
 
+;; Set default major-mode
+(setq-default major-mode 'text-mode)
+
 ;; Stop blinking cursor
 (blink-cursor-mode 0)
