@@ -11,7 +11,6 @@
   :bind (("C-x C-f" . helm-find-files)
 	 ("C-h a"   . helm-apropos)
 	 ("C-x b"   . helm-buffers-list)
-	 ("C-x C-g" . helm-do-grep)
 	 ("M-i"     . helm-imenu)
 	 ("M-y"     . helm-show-kill-ring)
 	 ("C-c h o" . helm-occur)
