@@ -10,7 +10,9 @@
   (bind-key "C-c C-l" #'helm-minibuffer-history minibuffer-local-map)
   :bind (("C-x C-f" . helm-find-files)
 	 ("C-h a"   . helm-apropos)
-	 ("C-x b"   . helm-mini)
+	 ("C-x b"   . helm-buffers-list)
+	 ("C-x C-g" . helm-do-grep)
+	 ("M-i"     . helm-imenu)
 	 ("M-y"     . helm-show-kill-ring)
 	 ("C-c h o" . helm-occur)
 	 ("C-h SPC" . helm-all-mark-rings)
@@ -18,13 +20,19 @@
 	 ("C-c h g" . helm-google-suggest))
   :diminish helm-mode
   :init
-  (setq helm-buffers-fuzzy-matching t
-	helm-recentf-fuzzy-match t
-	helm-semantic-fuzzy-match t
-	helm-imenu-fuzzy-match t
-	helm-locate-fuzzy-match t
-	helm-apropos-fuzzy-match t
-	helm-lisp-fuzzy-completion t)
+  (setq 
+   helm-display-header-line nil
+   helm-autoresize-min-height 10
+   helm-autoresize-max-height 35
+   helm-split-window-in-side-p t
+
+   helm-buffers-fuzzy-matching t
+   helm-recentf-fuzzy-match t
+   helm-semantic-fuzzy-match t
+   helm-imenu-fuzzy-match t
+   helm-locate-fuzzy-match t
+   helm-apropos-fuzzy-match t
+   helm-lisp-fuzzy-completion t)
   
   (when (executable-find "curl")
     (setq helm-google-suggest-use-curl-p t)))

@@ -83,6 +83,3 @@
 
 ;; Recognize single spaces at end of sentence
 (setq sentence-end-double-space nil)
-
-;; Bind Imenu to a more useful key
-(global-set-key (kbd "M-i") 'imenu)
