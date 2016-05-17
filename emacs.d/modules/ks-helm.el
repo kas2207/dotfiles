@@ -36,6 +36,11 @@
   (when (executable-find "curl")
     (setq helm-google-suggest-use-curl-p t)))
 
-
+(use-package "helm-flx"
+  :demand t
+  :config
+  (with-eval-after-load "helm"
+    (require 'helm-flx)
+    (helm-flx-mode 1)))
 
 (provide 'ks-helm)

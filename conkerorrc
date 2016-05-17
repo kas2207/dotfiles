@@ -57,6 +57,7 @@ remove_hook("mode_line_hook", mode_line_adder(clock_widget));
 // Webjumps
 define_webjump("python3", "http://docs.python.org/py3k/search.html?q=%s");
 define_webjump("github", "http://github.com");
+define_webjump("emacs-reddit", "https://www.reddit.com/r/emacs/");
 define_webjump("planet-emacs", "http://planet.emacsen.org/");
 define_webjump("safari", "http://safaribooksonline.com");
 

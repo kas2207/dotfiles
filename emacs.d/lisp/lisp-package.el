@@ -39,6 +39,7 @@
 ;; Load Modules
 (setq ks/available-modules
       '(ks-helm
+	ks-ido
 	ks-magit
 	ks-org))
 
