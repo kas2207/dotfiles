@@ -6,7 +6,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
-)
+ '(package-selected-packages
+   (quote
+    (org-bullets org-plus-contrib magit helm use-package paradox))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -35,9 +37,10 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
-;;;;;;;;;;;;;;;;;;;;;
-;; Global Settings ;;
-;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Global Visual Settings ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Global Line Numbers
 (global-linum-mode t)
@@ -68,8 +71,18 @@
 
 (set-box-cursor)
 
+;; Stop blinking cursor
+(blink-cursor-mode 0)
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Global Settings ;;
+;;;;;;;;;;;;;;;;;;;;;
+
 ;; Set default major-mode
 (setq-default major-mode 'text-mode)
 
-;; Stop blinking cursor
-(blink-cursor-mode 0)
+;; Recognize single spaces at end of sentence
+(setq sentence-end-double-space nil)
+
+;; Bind Imenu to a more useful key
+(global-set-key (kbd "M-i") 'imenu)
