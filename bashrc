@@ -13,6 +13,7 @@ alias conkeror="(conkeror &)"
 # Lazy
 alias today="date +%F"
 alias update="sudo apt-get update && sudo apt-get upgrade"
+alias python=python3
 
 # Elpy
 export PATH=$PATH:~/.local/bin/
