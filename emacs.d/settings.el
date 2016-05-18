@@ -83,3 +83,7 @@
 
 ;; Recognize single spaces at end of sentence
 (setq sentence-end-double-space nil)
+
+;; Use Conkeror as the Default Web Browser
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "/usr/bin/conkeror")

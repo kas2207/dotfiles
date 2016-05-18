@@ -49,6 +49,9 @@ session_pref('browser.history_expire_days', 7);
 editor_shell_command = "emacs";
 view_source_use_external_editor = true;
 
+// Load URLs from External Application
+url_remoting_fn = load_url_in_new_buffer;
+
 // Mode Line
 mode_line_add_buttons(standard_mode_line_buttons, true);
 remove_hook("mode_line_hook", mode_line_adder(current_buffer_scroll_position_widget));
