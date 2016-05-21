@@ -6,5 +6,6 @@
   :config (yas-global-mode 1)
   :diminish yas-minor-mode)
 
+(global-set-key [remap dabbrev-expand] 'hippie-expand)
 
 (provide 'ks-snippets)
