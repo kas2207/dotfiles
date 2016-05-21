@@ -41,7 +41,8 @@
       '(ks-helm
 	ks-ido
 	ks-magit
-	ks-org))
+	ks-org
+	ks-snippets))
 
 (defun ks/load-modules ()
   (interactive)
