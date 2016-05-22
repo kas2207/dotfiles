@@ -1,5 +1,3 @@
-(require 'lisp-package)
-
 (use-package org
   :ensure org-plus-contrib
   :bind (("C-c l" . org-store-link)

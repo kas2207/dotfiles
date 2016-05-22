@@ -19,12 +19,13 @@
 (add-to-list 'load-path (concat dotfiles-dir "modules"))
 
 
-
-(setq custom-file (locate-user-emacs-file "settings.el"))
+(setq custom-file (locate-user-emacs-file "ks-custom.el"))
 (load custom-file 'noerror)
 
 ;; Load the Lisp Emacs fundamentals.
-(require 'lisp-package)
+(require 'ks-wm)
+(require 'ks-em)
+(require 'ks-package)
 
 (ks/load-modules)
 

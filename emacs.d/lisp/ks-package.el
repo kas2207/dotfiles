@@ -1,4 +1,4 @@
-;;; lisp-package.el --- Package system configuration
+;;; ks-package.el --- Package system configuration
 
 ;; `(online?)` is a function that tries to detect whether you are online.
 ;; We want to refresh our package list on Emacs start if we are.
@@ -48,4 +48,4 @@
   (interactive)
   (dolist (module ks/available-modules) (require module nil t)))
 
-(provide 'lisp-package)
+(provide 'ks-package)
