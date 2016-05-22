@@ -23,4 +23,6 @@
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "/usr/bin/conkeror")
 
+(require 'dired-x)
+
 (provide 'ks-wm)
