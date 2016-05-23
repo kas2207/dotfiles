@@ -4,7 +4,14 @@
 	      (delq nil
 		    (mapcar (lambda (x) (and (file-exists-p x) x))
 			    '("~/Dropbox/Org-Files/personal.org"
-			      "~/Dropbox/Org-Files/business.org"))))
+			      "~/Dropbox/Org-Files/business.org")))
+	      org-tag-alist '((:startgroup . nil)
+			      ("@work"     . ?w)
+			      ("@home"     . ?h)
+			      (:endgroup   . nil)
+			      ("education" . ?r)
+			      ("finance"   . ?f)
+			      ("phone"     . ?p)))
   :bind (("C-c l" . org-store-link)
 	 ("C-c a" . org-agenda)
 	 ("C-c c" . org-capture)
