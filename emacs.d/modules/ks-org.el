@@ -11,7 +11,9 @@
 			      (:endgroup   . nil)
 			      ("education" . ?r)
 			      ("finance"   . ?f)
-			      ("phone"     . ?p)))
+			      ("phone"     . ?p))
+	      org-default-notes-file
+	      "~/Dropbox/Org-Files/notes.org")
   :bind (("C-c l" . org-store-link)
 	 ("C-c a" . org-agenda)
 	 ("C-c c" . org-capture)
