@@ -3,8 +3,8 @@
   :init (setq org-agenda-files
 	      (delq nil
 		    (mapcar (lambda (x) (and (file-exists-p x) x))
-			    '("~/Dropbox/Personal/organizer.org"
-			      "~/Dropbox/Personal/business.org"))))
+			    '("~/Dropbox/Org-Files/personal.org"
+			      "~/Dropbox/Org-Files/business.org"))))
   :bind (("C-c l" . org-store-link)
 	 ("C-c a" . org-agenda)
 	 ("C-c c" . org-capture)
