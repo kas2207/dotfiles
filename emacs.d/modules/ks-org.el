@@ -3,8 +3,7 @@
   :init (setq org-agenda-files
 	      (delq nil
 		    (mapcar (lambda (x) (and (file-exists-p x) x))
-			    '("~/Dropbox/Org-Files/personal.org"
-			      "~/Dropbox/Org-Files/business.org")))
+			    '("~/Dropbox/Org-Files/taskdiary.org")))
 	      org-tag-alist '((:startgroup . nil)
 			      ("@work"     . ?w)
 			      ("@home"     . ?h)
@@ -12,7 +11,6 @@
 			      ("education" . ?r)
 			      ("finance"   . ?f)
 			      ("phone"     . ?p))
-	      org-default-notes-file "~/Dropbox/Org-Files/notes.org"
 	      org-directory "~/Dropbox/Org-Files"
 	      org-mobile-inbox-for-pull "~/Dropbox/Org-Files/mobile-flagged.org"
 	      org-mobile-directory "~/Dropbox/Apps/MobileOrg"
@@ -21,7 +19,27 @@
 				       ("TODO"       . org-todo)
 				       ("INPROGRESS" . (:foreground "orange" :background "yellow" :weight bold))
 				       ("COMPLETED"  . org-done))
-	      org-log-time 'time)
+	      org-log-time 'time
+	      org-capture-templates
+	      '(("t" "Task Diary" entry
+		 (file+datetree
+		  "~/Dropbox/Org-Files/taskdiary.org")
+		 "* TODO %^{Description} %^g\n %?\n Added: %U")
+		("a" "Appointment" entry
+		 (file+headline
+		  "~/Dropbox/Org-Files/taskdiary.org" "Calendar")
+		 "* APPT %^{Description} %^g\n %?\n Added: %U")
+		("n" "Notes" entry
+		 (file+datetree "~/Dropbox/Org-Files/taskdiary.org")
+		 "* %^{Description} %^g %?\n Added: %U")
+		("j" "Journal" entry
+		 (file+datetree
+		  "~/Dropbox/Org-Files/journal.org")
+		 "** %^{Heading}")
+		("l" "Log Time" entry
+		 (file+datetree
+		  "~/Dropbox/Org-Files/timelog.org")
+		 "** %U - %^{Activity}  :TIME:")))
   :bind (("C-c l" . org-store-link)
 	 ("C-c a" . org-agenda)
 	 ("C-c c" . org-capture)
