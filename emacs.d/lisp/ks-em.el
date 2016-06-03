@@ -41,4 +41,27 @@
 ;; Recognize single spaces at end of sentence
 (setq sentence-end-double-space nil)
 
+;; Tab indentation
+(set-default 'indent-tabs-mode nil)
+
+;; Always indent after a newline.
+(define-key global-map (kbd "RET") 'newline-and-indent)
+
+;; Whitespace cleanup with ethan-wspace
+
+(use-package ethan-wspace
+  :demand t
+  :commands global-ethan-wspace-mode
+  :config (global-ethan-wspace-mode 1)
+  :bind ("C-c c" . ethan-wspace-clean-all)
+  :diminish ethan-wspace-mode)
+
+(setq mode-require-final-newline nil)
+(setq require-final-newline nil)
+
+(setq-default tab-width 4)
+
+;; Python indent defaults
+(setq-default py-indent-offset 2)
+
 (provide 'ks-em)

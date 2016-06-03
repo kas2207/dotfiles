@@ -74,3 +74,25 @@ PS1_END="\
 \[$BBLACK\]$ "
 
 PS1="${PS1_DIR}${PS1_GIT}${PS1_END}"
+
+
+#######################################################################
+# Detect current git branch
+#######################################################################
+function git_branch_no_paren {
+  local git_status="$(git status 2> /dev/null)"
+  local on_branch="On branch ([^${IFS}]*)"
+  local on_commit="HEAD detached at ([^${IFS}]*)"
+
+  if [[ $git_status =~ $on_branch ]]; then
+    local branch=${BASH_REMATCH[1]}
+    echo "$branch"
+  elif [[ $git_status =~ $on_commit ]]; then
+    local commit=${BASH_REMATCH[1]}
+    echo "$commit"
+  else
+    echo "no_git"
+  fi
+}
+
+export GITBRANCH=$(git_branch_no_paren)

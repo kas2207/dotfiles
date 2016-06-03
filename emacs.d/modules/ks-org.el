@@ -19,7 +19,7 @@
 				       ("TODO"       . org-todo)
 				       ("INPROGRESS" . (:foreground "orange" :background "yellow" :weight bold))
 				       ("COMPLETED"  . org-done))
-	      org-log-time 'time
+	      org-log-done 'time
 	      org-capture-templates
 	      '(("t" "Task Diary" entry
 		 (file+datetree
