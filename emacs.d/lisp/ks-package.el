@@ -6,11 +6,11 @@
 (require 'cl)
 (defun online? ()
   (if (and (functionp 'network-interface-list)
-	   (network-interface-list))
+           (network-interface-list))
       (some (lambda (iface) (unless (equal "lo" (car iface))
-			      (member 'up (first (last (network-interface-info
-							 (car iface)))))))
-	    (network-interface-list))
+                              (member 'up (first (last (network-interface-info
+                                                        (car iface)))))))
+            (network-interface-list))
     t))
 
 ;; Package Manager
@@ -39,10 +39,11 @@
 ;; Load Modules
 (setq ks/available-modules
       '(ks-helm
-	ks-ido
-	ks-magit
-	ks-org
-	ks-snippets))
+        ks-help
+        ks-ido
+        ks-magit
+        ks-org
+        ks-snippets))
 
 (defun ks/load-modules ()
   (interactive)
