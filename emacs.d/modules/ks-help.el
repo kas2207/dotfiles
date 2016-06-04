@@ -1,7 +1,5 @@
 ;; Help for easy on the fly documentation
 
-(require 'ks-package)
-
 (use-package which-key
   :commands which-key-mode
   :demand t
