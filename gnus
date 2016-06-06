@@ -3,9 +3,9 @@
  mml-secure-openpgp-signers '("24899B1E")
  gnus-select-method
  '(nnimap "gmail"
-	  (nnimap-address "imap.gmail.com")
-	  (nnimap-server-port 993)
-	  (nnimap-stream ssl))
+      (nnimap-address "imap.gmail.com")
+      (nnimap-server-port 993)
+      (nnimap-stream ssl))
  smtpmail-smtp-server "smtp.gmail.com"
  smtpmail-smtp-service 587
  message-send-mail-function 'smtpmail-send-it
