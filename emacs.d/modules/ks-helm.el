@@ -9,17 +9,17 @@
   (bind-key "C-z" #'helm-select-action helm-map)
   (bind-key "C-c C-l" #'helm-minibuffer-history minibuffer-local-map)
   :bind (("C-x C-f" . helm-find-files)
-	 ("C-h a"   . helm-apropos)
-	 ("C-x b"   . helm-buffers-list)
-	 ("M-i"     . helm-imenu)
-	 ("M-y"     . helm-show-kill-ring)
-	 ("C-c h o" . helm-occur)
-	 ("C-h SPC" . helm-all-mark-rings)
-	 ("C-c h x" . helm-register)
-	 ("C-c h g" . helm-google-suggest))
+     ("C-h a"   . helm-apropos)
+     ("C-x b"   . helm-buffers-list)
+     ("M-i"     . helm-imenu)
+     ("M-y"     . helm-show-kill-ring)
+     ("C-c h o" . helm-occur)
+     ("C-h SPC" . helm-all-mark-rings)
+     ("C-c h x" . helm-register)
+     ("C-c h g" . helm-google-suggest))
   :diminish helm-mode
   :init
-  (setq 
+  (setq
    helm-display-header-line nil
    helm-autoresize-min-height 10
    helm-autoresize-max-height 35
@@ -32,7 +32,7 @@
    helm-locate-fuzzy-match t
    helm-apropos-fuzzy-match t
    helm-lisp-fuzzy-completion t)
-  
+
   (when (executable-find "curl")
     (setq helm-google-suggest-use-curl-p t)))
 

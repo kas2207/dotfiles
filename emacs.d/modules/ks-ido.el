@@ -17,7 +17,7 @@
   :config
   (smex-initialize)
   :bind (("M-x" . smex)
-	 ("M-X" . smex-major-mode-commands)))
+     ("M-X" . smex-major-mode-commands)))
 
 (use-package ido-vertical-mode
   :config
@@ -27,8 +27,8 @@
   :config
   (flx-ido-mode 1)
   (setq ido-enable-flex-matching t
-	ido-use-faces nil
-	gs-cons-threshold 20000000))
+    ido-use-faces nil
+    gs-cons-threshold 20000000))
 
 
 (provide 'ks-ido)
