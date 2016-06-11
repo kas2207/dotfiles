@@ -43,6 +43,7 @@
         ks-ido
         ks-magit
         ks-org
+        ks-python
         ks-snippets))
 
 (defun ks/load-modules ()

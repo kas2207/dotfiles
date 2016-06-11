@@ -53,4 +53,8 @@
     :config
     (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))))
 
+(use-package ox-reveal
+  :config
+  (setq org-reveal-root "file:///home//kyleschmidt/Dropbox/reveal.js-master"))
+
 (provide 'ks-org)
