@@ -43,8 +43,8 @@
         ks-ido
         ks-magit
         ks-org
-        ks-python
-        ks-snippets))
+        ks-snippets
+        ks-whitespace))
 
 (defun ks/load-modules ()
   (interactive)
