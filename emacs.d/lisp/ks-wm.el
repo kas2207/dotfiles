@@ -18,10 +18,6 @@
 ;; Unify the emacs kill ring and the clipboad
 (setq x-select-enable-clipboard t)
 
-;; Use Conkeror as the Default Web Browser
-(setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "/usr/bin/conkeror")
-
 (require 'dired-x)
 
 (provide 'ks-wm)
