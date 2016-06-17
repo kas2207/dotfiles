@@ -38,12 +38,16 @@
 
 ;; Load Modules
 (setq ks/available-modules
-      '(ks-helm
+      '(ks-complete
+        ks-flycheck
+        ks-helm
         ks-help
         ks-ido
         ks-magit
+        ks-navigation
         ks-org
         ks-python
+        ks-smart-mode-line
         ks-snippets
         ks-whitespace))
 
