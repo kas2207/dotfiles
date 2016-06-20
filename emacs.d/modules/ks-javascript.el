@@ -1,5 +1,8 @@
 (require 'ks-lib)
 
+(-when-let (npm-prefix (ks/exec-if-exec "npm" "config get prefix"))
+  (setenv "PATH" (concat npm-prefix "/bin:" (getenv "PATH"))))
+
 (use-package js2-mode
   :mode (("\\.js$" . js2-mode)
          ("\\.es6\\'" . js2-mode)

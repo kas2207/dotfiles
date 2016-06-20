@@ -27,8 +27,4 @@ Otherwise, return nil."
 output as per `ks/exec'. Otherwise, return nil."
   (when (ks/is-exec command) (ks/exec (s-concat command " " args))))
 
-
-(-when-let (npm-prefix (ks/exec-if-exec "npm" "config get prefix"))
-  (setenv "PATH" (concat npm-prefix "/bin:" (getenv "PATH"))))
-
 (provide 'ks-lib)
