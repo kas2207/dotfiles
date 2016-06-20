@@ -42,7 +42,10 @@
         ks-flycheck
         ks-helm
         ks-help
+        ks-html
         ks-ido
+        ks-javascript
+        ks-json
         ks-magit
         ks-navigation
         ks-org

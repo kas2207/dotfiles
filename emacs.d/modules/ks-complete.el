@@ -20,6 +20,13 @@
     (setq company-quickhelp-delay 1)
     (company-quickhelp-mode 1))
 
+  (use-package company-jedi
+    :config
+    (defun ks/python-mode-hook ()
+      (add-to-list 'company-backends 'company-jedi))
+
+    (add-hook 'python-mode-hook 'ks/python-mode-hook))
+
   (use-package company-try-hard
     :commands company-try-hard
     :bind ("C-\\" . company-try-hard)

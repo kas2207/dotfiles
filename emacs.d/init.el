@@ -25,6 +25,7 @@
 ;; Load the Lisp Emacs fundamentals.
 (require 'ks-wm)
 (require 'ks-em)
+(require 'ks-lib)
 (require 'ks-package)
 
 (ks/load-modules)
