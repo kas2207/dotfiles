@@ -38,7 +38,8 @@
 
 ;; Load Modules
 (setq ks/available-modules
-      '(ks-complete
+      '(ks-appearance
+        ks-complete
         ks-flycheck
         ks-helm
         ks-help
