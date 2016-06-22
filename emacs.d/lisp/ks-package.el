@@ -40,6 +40,7 @@
 (setq ks/available-modules
       '(ks-appearance
         ks-complete
+        ks-dired
         ks-flycheck
         ks-helm
         ks-help

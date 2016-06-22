@@ -18,6 +18,4 @@
 ;; Unify the emacs kill ring and the clipboad
 (setq x-select-enable-clipboard t)
 
-(require 'dired-x)
-
 (provide 'ks-wm)
