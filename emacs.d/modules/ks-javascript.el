@@ -20,6 +20,7 @@
    js2-strict-inconsistent-return-warning nil
    js2-global-externs
    '("module" "require" "__dirname" "process" "console" "JSON" "$" "_"))
+  (add-to-list 'auto-mode-alist '("\\.jsx$" . js2-jsx-mode))
   )
 
 (use-package tern
