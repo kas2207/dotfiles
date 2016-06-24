@@ -1,4 +1,5 @@
 (use-package restclient
+  :mode (("\\.http$" . restclient-mode))
   :config
   (with-eval-after-load "ks-helm"
     (use-package restclient-helm))
