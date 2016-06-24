@@ -41,6 +41,7 @@
       '(ks-appearance
         ks-complete
         ks-dired
+        ks-eshell
         ks-flycheck
         ks-helm
         ks-help
