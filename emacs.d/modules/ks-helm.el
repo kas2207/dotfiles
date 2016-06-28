@@ -42,7 +42,8 @@
     (setq helm-google-suggest-use-curl-p t)))
 
 (use-package swiper-helm
-  :bind (("C-S-s" . swiper-helm)))
+  :bind (("C-s" . swiper-helm)
+         ("C-r" . swiper-helm)))
 
 (use-package "helm-flx"
   :demand t
