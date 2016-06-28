@@ -25,7 +25,9 @@
     (defun ks/python-mode-hook ()
       (add-to-list 'company-backends 'company-jedi))
 
-    (add-hook 'python-mode-hook 'ks/python-mode-hook))
+    (add-hook 'python-mode-hook 'ks/python-mode-hook)
+    (with-eval-after-load "python"
+      (define-key python-mode-map (kbd "C-c .") 'jedi:goto-definition)))
 
   (use-package company-try-hard
     :commands company-try-hard
