@@ -10,5 +10,11 @@
 (setq python-shell-interpreter "python3"
       python-shell-interpreter-args "-i")
 
+(with-eval-after-load "ks-helm"
+  (use-package helm-pydoc
+    :config
+    (with-eval-after-load "python"
+      (define-key python-mode-map (kbd "C-c C-d") 'helm-pydoc))))
+
 
 (provide 'ks-python)
