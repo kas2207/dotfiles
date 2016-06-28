@@ -30,5 +30,10 @@
     ido-use-faces nil
     gs-cons-threshold 20000000))
 
+(defun ks-ido-define-keys () ;; C-n/p is more intuitive in vertical layout
+  (define-key ido-completion-map (kbd "C-n") 'ido-next-match)
+  (define-key ido-completion-map (kbd "C-p") 'ido-prev-match))
+
+(add-hook 'ido-setup-hook 'ks-ido-define-keys)
 
 (provide 'ks-ido)
