@@ -8,6 +8,10 @@
       :bind (("C-c C-f"  . helm-projectile-find-file-dwim)
              ("C-x C-g"  . helm-projectile-grep))
       :config (helm-projectile-on)))
+  (use-package helm-pydoc
+    :config
+    (with-eval-after-load "python"
+      (define-key python-mode-map (kbd "C-c C-d") 'helm-pydoc)))
   (helm-autoresize-mode 1)
   (bind-key "<tab>" #'helm-execute-persistent-action helm-map)
   (bind-key "C-i" #'helm-execute-persistent-action helm-map)
