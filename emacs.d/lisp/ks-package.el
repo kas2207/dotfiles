@@ -58,7 +58,8 @@
         ks-restclient
         ks-smart-mode-line
         ks-snippets
-        ks-whitespace))
+        ks-whitespace
+        ks-yaml))
 
 (defun ks/load-modules ()
   (interactive)

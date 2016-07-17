@@ -27,4 +27,9 @@ Otherwise, return nil."
 output as per `ks/exec'. Otherwise, return nil."
   (when (ks/is-exec command) (ks/exec (s-concat command " " args))))
 
+(defun ks/create-directory (directory-name)
+  "Create a directory if it does not exist"
+  (unless (file-exists-p directory-name)
+    (make-directory directory-name)))
+
 (provide 'ks-lib)
