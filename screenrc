@@ -12,6 +12,8 @@ hardstatus string "%{=} %-w%{+b c}%n*%t%{-b m}%{w}%+w %= %{b}%H %{= G} %D %d %M 
 
 term screen-256color
 
+escape ^za
+
 # C-a and C-e for start/end of line
 markkeys "0=^a:\$=^e"
 
