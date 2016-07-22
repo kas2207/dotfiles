@@ -14,7 +14,7 @@
 
 (use-package eshell-git-prompt
   :config
-  (eshell-git-prompt-use-theme 'powerline))
+  (eshell-git-prompt-use-theme 'robbyrussell))
 
 (setq eshell-cmpl-cycle-completions nil)
 
