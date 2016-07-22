@@ -32,6 +32,11 @@ BCYAN="\033[1;36m"
 COLOR_RESET="\033[0m"
 BOLD="$(tput bold)"
 
+# LS COLORS
+export LS_OPTIONS='--color=auto'
+eval "`dircolors`"
+alias ls='ls $LS_OPTIONS'
+
 # Functions
 function git_color {
   local git_status="$(git status 2> /dev/null)"
