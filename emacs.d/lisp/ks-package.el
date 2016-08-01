@@ -41,6 +41,7 @@
       '(ks-appearance
         ks-complete
         ks-dired
+        ks-docker
         ks-editing
         ks-eshell
         ks-flycheck
