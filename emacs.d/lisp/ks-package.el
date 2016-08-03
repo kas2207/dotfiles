@@ -42,6 +42,7 @@
         ks-complete
         ks-dired
         ks-docker
+        ks-dot
         ks-editing
         ks-eshell
         ks-flycheck
