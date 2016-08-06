@@ -12,7 +12,7 @@
  '(org-agenda-files nil)
  '(package-selected-packages
    (quote
-    (helm-projectile rainbow-mode web-mode ox-reveal smart-mode-line rich-minority anzu ace-window avy flycheck company-try-hard company-quickhelp company discover-my-major which-key ethan-wspace yasnippet s flx-ido ido-vertical-mode smex ido-ubiquitous helm-flx swiper-helm org-bullets org-plus-contrib magit helm use-package paradox)))
+    (markdown-mode yaml-mode helm-projectile rainbow-mode web-mode ox-reveal smart-mode-line rich-minority anzu ace-window avy flycheck company-try-hard company-quickhelp company discover-my-major which-key ethan-wspace yasnippet s flx-ido ido-vertical-mode smex ido-ubiquitous helm-flx swiper-helm org-bullets org-plus-contrib magit helm use-package paradox)))
  '(paradox-github-token t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

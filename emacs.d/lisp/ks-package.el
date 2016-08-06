@@ -51,6 +51,7 @@
         ks-javascript
         ks-json
         ks-magit
+        ks-markdown
         ks-navigation
         ks-org
         ks-project
