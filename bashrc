@@ -18,6 +18,12 @@ alias python=python3
 # Elpy
 export PATH=$PATH:~/.local/bin/
 
+# Openvpn
+alias kvpn="sudo openvpn --config /home/kyleschmidt/kyleschmidt.conf"
+
+# Activate Virtualenv
+alias svba="source venv/bin/activate"
+
 # Colors
 BBLACK="\033[1;30m"
 RED="\033[0;31m"
@@ -76,7 +82,7 @@ PS1_GIT="\[\$(git_color)\]\[$BOLD\]\$(git_branch)\[$BOLD\]\[$COLOR_RESET\]"
 
 PS1_END="\
 
-\[$BBLACK\]$ "
+\[$ORANGE\]$ "
 
 PS1="${PS1_DIR}${PS1_GIT}${PS1_END}"
 
