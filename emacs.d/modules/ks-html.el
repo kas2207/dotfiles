@@ -12,7 +12,10 @@
   :config
   (setq-default web-mode-enable-current-element-highlight t)
   (bind-keys :map web-mode-map
-             ("C-c C-r" . 'mc/mark-sgml-tag-pair)))
+             ("C-c C-r" . 'mc/mark-sgml-tag-pair))
+  (setq web-mode-markup-indent-offset 2
+        web-mode-css-indent-offset 2
+        web-mode-code-indent-offset 2))
 
 (use-package rainbow-mode
   :config
