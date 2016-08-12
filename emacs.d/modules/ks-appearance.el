@@ -36,4 +36,11 @@
   :config
   (load-theme 'eclipse))
 
+(ignore-errors
+  (cond ((eq system-type 'gnu/linux)
+         (set-frame-font "DejaVu Sans Mono"))
+        ((eq system-type 'windows-nt)
+         (set-frame-font "Lucida Sans Typewriter"))))
+(set-face-attribute 'default nil :height 113)
+
 (provide 'ks-appearance)

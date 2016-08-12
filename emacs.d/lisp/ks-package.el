@@ -18,12 +18,12 @@
         ks-json
         ks-magit
         ks-markdown
+        ks-mode-line
         ks-navigation
         ks-org
         ks-project
         ks-python
         ks-restclient
-        ks-smart-mode-line
         ks-snippets
         ks-whitespace
         ks-yaml))
