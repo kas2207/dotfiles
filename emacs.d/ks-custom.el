@@ -8,7 +8,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "e95d476dfb29929d95ade09cd8671ad3fc4676d1d347d1d453b5915e8e33db5f" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default)))
+    ("e1994cf306356e4358af96735930e73eadbaf95349db14db6d9539923b225565" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "e95d476dfb29929d95ade09cd8671ad3fc4676d1d347d1d453b5915e8e33db5f" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default)))
  '(org-agenda-files nil)
  '(package-selected-packages
    (quote

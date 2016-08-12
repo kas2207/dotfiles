@@ -7,7 +7,8 @@
          ("\\.as[cp]x\\'"   . web-mode)
          ("\\.erb\\'"       . web-mode)
          ("\\.mustache\\'"  . web-mode)
-         ("\\.djhtml\\'"    . web-mode))
+         ("\\.djhtml\\'"    . web-mode)
+         ("\\.jsx$"         . web-mode))
   :config
   (setq-default web-mode-enable-current-element-highlight t)
   (bind-keys :map web-mode-map

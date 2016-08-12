@@ -57,6 +57,11 @@
 (setq custom-file (concat dotfiles-dir "ks-custom.el"))
 (load custom-file 'noerror)
 
+(use-package exec-path-from-shell
+  :config
+  (when (memq window-system '(mac ns))
+    (exec-path-from-shell-initialize)))
+
 ;; Load the Lisp Emacs fundamentals.
 (require 'ks-wm)
 (require 'ks-em)
