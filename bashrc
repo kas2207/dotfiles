@@ -18,6 +18,12 @@ alias python=python3
 # Elpy
 export PATH=$PATH:~/.local/bin/
 
+# Openvpn
+alias kvpn="sudo openvpn --config /home/kyleschmidt/kyleschmidt.conf"
+
+# Activate Virtualenv
+alias svba="source venv/bin/activate"
+
 # Colors
 BBLACK="\033[1;30m"
 RED="\033[0;31m"
