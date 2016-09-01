@@ -14,7 +14,6 @@
         ks-help
         ks-html
         ks-ido
-        ks-javascript
         ks-json
         ks-magit
         ks-markdown
