@@ -1,3 +1,6 @@
+;;(require 'nvm)
+;;(nvm-use (caar (last (nvm--installed-versions))))
+
 (use-package web-mode
   :mode (
          ("\\.html?\\'"     . web-mode)
@@ -7,8 +10,7 @@
          ("\\.as[cp]x\\'"   . web-mode)
          ("\\.erb\\'"       . web-mode)
          ("\\.mustache\\'"  . web-mode)
-         ("\\.djhtml\\'"    . web-mode)
-         ("\\.jsx$"         . web-mode))
+         ("\\.djhtml\\'"    . web-mode))
   :config
   (setq-default web-mode-enable-current-element-highlight t)
   (bind-keys :map web-mode-map

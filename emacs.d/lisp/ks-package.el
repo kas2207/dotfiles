@@ -4,6 +4,7 @@
 (setq ks/available-modules
       '(ks-appearance
         ks-complete
+        ks-counsel
         ks-dired
         ks-docker
         ks-dot
@@ -14,7 +15,7 @@
         ks-help
         ks-html
         ks-ido
-        ks-javascript
+        ;;ks-ivy
         ks-json
         ks-magit
         ks-markdown
