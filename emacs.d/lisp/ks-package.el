@@ -16,6 +16,7 @@
         ks-html
         ks-ido
         ;;ks-ivy
+        ks-java
         ks-json
         ks-magit
         ks-markdown
