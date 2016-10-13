@@ -11,6 +11,7 @@
         ks-editing
         ks-eshell
         ks-flycheck
+        ks-go
         ks-helm
         ks-help
         ks-html
