@@ -3,6 +3,7 @@
 ;; Load Modules
 (setq ks/available-modules
       '(ks-appearance
+        ks-clojure
         ks-complete
         ks-counsel
         ks-dired
