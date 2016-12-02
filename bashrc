@@ -1,7 +1,9 @@
 PWD="`pwd`"
 
 # added JAVA_HOME ENV
-export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_45
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre
+# export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_45
+export JAVACMD='which java'
 
 # Go
 export GOROOT=/home/kyleschmidt/go

@@ -21,5 +21,6 @@
   :init
   (add-hook 'go-mode-hook 'go-eldoc-setup))
 
+(setenv "GOPATH" "/home/kyleschmidt/SourceCode/gocode")
 
 (provide 'ks-go)
