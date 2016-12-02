@@ -16,6 +16,7 @@
         ks-helm
         ks-help
         ks-html
+        ks-hydra
         ks-ido
         ;;ks-ivy
         ks-java
