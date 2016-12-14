@@ -21,6 +21,7 @@
         ;;ks-ivy
         ks-java
         ks-json
+        ks-lisp
         ks-magit
         ks-markdown
         ks-mode-line

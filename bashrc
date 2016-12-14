@@ -5,6 +5,9 @@ export JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre
 # export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_45
 export JAVACMD='which java'
 
+# Leiningen
+export PATH=$PATH/bin/lein
+
 # Go
 export GOROOT=/home/kyleschmidt/go
 export GOPATH=~/SourceCode/gocode
