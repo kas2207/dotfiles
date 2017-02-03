@@ -4,6 +4,27 @@
 alias today="date +%F"
 alias update="sudo apt-get update && sudo apt-get upgrade"
 
+#########
+# Emacs #
+#########
+export ALTERNATE_EDITOR=emacs EDITOR="emacsclient -t" VISUAL="emacsclient -c -n"
+alias ed="emacs --daemon"
+alias et="emacsclient -t"
+alias ec="emacsclient -c -n -a emacs"
+alias ek="emacsclient -e '(kill-emacs)'"
+
+########
+# Tmux #
+########
+alias t="tmux"
+alias tk="tmux kill-ses -t"
+alias tka="tmux kill-session -a"
+
+############
+# Terminal #
+############
+export TERM=xterm-256color
+
 ########
 # Java #
 ########
