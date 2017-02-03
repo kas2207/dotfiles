@@ -8,7 +8,7 @@
 ##############################################################################
 dir=~/dotfiles
 olddir=~/dotfiles_old
-files="bashrc screenrc vimrc offlineimaprc conkerorrc gnus"  # list of files/folders to symlink in homedir
+files="bashrc screenrc vimrc gnus tmux.conf"  # list of files/folders to symlink in homedir
 emacs_files="emacs.d" # future list of files/folder to symlink in emacs.d
 
 ##############################################################################
@@ -52,19 +52,10 @@ sudo pip install importmagic
 sudo pip install autopep8
 sudo pip install yapf
 sudo pip install jsbeautifier
+sudo pip install pylint
 
 # Install Racket
 sudo apt-get install racket
-
-# JavaScript Helpers
-sudo apt-get install npm
-sudo npm install -g jshint
-sudo npm install -g js-beautify
-sudo npm install -g csslint
-
-# Install surfraw for broswer interaction via Emacs Helm mode
-echo "Installing surfraw for internet surfing via Emacs and Terminal"
-sudo apt-get install surfraw
 
 # Install Tidy
 echo "Installing tidy for use with web-mode"
