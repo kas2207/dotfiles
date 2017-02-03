@@ -13,6 +13,11 @@ alias et="emacsclient -t"
 alias ec="emacsclient -c -n -a emacs"
 alias ek="emacsclient -e '(kill-emacs)'"
 
+############
+# Terminal #
+############
+export TERM=xterm-256color
+
 ########
 # Tmux #
 ########
@@ -20,10 +25,6 @@ alias t="tmux"
 alias tk="tmux kill-ses -t"
 alias tka="tmux kill-session -a"
 
-############
-# Terminal #
-############
-export TERM=xterm-256color
 
 ########
 # Java #
