@@ -20,6 +20,7 @@
         ks-ido
         ;;ks-ivy
         ks-java
+        ks-javascript
         ks-json
         ks-lisp
         ks-magit

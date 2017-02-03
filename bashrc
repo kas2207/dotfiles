@@ -1,39 +1,37 @@
-PWD="`pwd`"
+###############
+# Keybindings #
+###############
+alias today="date +%F"
+alias update="sudo apt-get update && sudo apt-get upgrade"
 
+########
+# Java #
+########
 # added JAVA_HOME ENV
 export JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre
 # export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_45
 export JAVACMD='which java'
 
+
+###########
+# Clojure #
+###########
 # Leiningen
 export PATH=$PATH/bin/lein
 
-# Go
-export GOROOT=/home/kyleschmidt/go
-export GOPATH=~/SourceCode/gocode
-export PATH=$PATH:$GOROOT/bin
-export PATH=$PATH:$GOPATH/bin
-
-# Added Terraform
-export PATH=$PATH:/usr/terraform
-
-# Conkeror
-export PATH=$PATH:${PWD}
-alias conkeror="(conkeror &)"
-
-# Lazy
-alias today="date +%F"
-alias update="sudo apt-get update && sudo apt-get upgrade"
-alias python=python3
-
-# Elpy
-export PATH=$PATH:~/.local/bin/
-
+##########
+# Kepler #
+##########
 # Openvpn
 alias kvpn="sudo openvpn --config /home/kyleschmidt/kyleschmidt.conf"
 
 # Activate Virtualenv
 alias svba="source venv/bin/activate"
+
+
+########################
+# Format Bash Prompt   #
+########################
 
 # Colors
 BBLACK="\033[1;30m"
