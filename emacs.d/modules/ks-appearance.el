@@ -41,9 +41,6 @@
          (set-frame-font "DejaVu Sans Mono"))
         ((eq system-type 'windows-nt)
          (set-frame-font "Lucida Sans Typewriter"))))
-(if (eq system-type 'darwin)
-    (set-face-attribute 'default nil :height 250)
-  (set-face-attribute 'default nil :height 100)
-)
+(set-face-attribute 'default nil :height 100)
 
 (provide 'ks-appearance)

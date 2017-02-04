@@ -4,6 +4,7 @@ PWD="`pwd`"
 export JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre
 # export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_45
 export JAVACMD='which java'
+export PATH=$PATH:~/kyleschmidt/appengine-java-sdk-1.9.48/bin/
 
 # Go
 export GOROOT=/home/kyleschmidt/go
