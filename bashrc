@@ -1,37 +1,60 @@
-PWD="`pwd`"
+###############
+# Keybindings #
+###############
+alias today="date +%F"
+alias update="sudo apt-get update && sudo apt-get upgrade"
 
+#########
+# Emacs #
+#########
+export ALTERNATE_EDITOR=emacs EDITOR="emacsclient -t" VISUAL="emacsclient -c -n"
+alias ed="emacs --daemon"
+alias et="emacsclient -t"
+alias ec="emacsclient -c -n -a emacs"
+alias ek="emacsclient -e '(kill-emacs)'"
+
+############
+# Terminal #
+############
+export TERM=xterm-256color
+
+########
+# Tmux #
+########
+alias t="tmux"
+alias tk="tmux kill-ses -t"
+alias tka="tmux kill-session -a"
+
+
+########
+# Java #
+########
 # added JAVA_HOME ENV
 export JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre
 # export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_45
 export JAVACMD='which java'
 export PATH=$PATH:~/kyleschmidt/appengine-java-sdk-1.9.48/bin/
 
-# Go
-export GOROOT=/home/kyleschmidt/go
-export GOPATH=~/SourceCode/gocode
-export PATH=$PATH:$GOROOT/bin
-export PATH=$PATH:$GOPATH/bin
 
-# Added Terraform
-export PATH=$PATH:/usr/terraform
+###########
+# Clojure #
+###########
+# Leiningen
+export PATH=$PATH/bin/lein
 
-# Conkeror
-export PATH=$PATH:${PWD}
-alias conkeror="(conkeror &)"
-
-# Lazy
-alias today="date +%F"
-alias update="sudo apt-get update && sudo apt-get upgrade"
-alias python=python3
-
-# Elpy
-export PATH=$PATH:~/.local/bin/
-
+##########
+# Kepler #
+##########
 # Openvpn
 alias kvpn="sudo openvpn --config /home/kyleschmidt/kyleschmidt.conf"
 
 # Activate Virtualenv
 alias svba="source venv/bin/activate"
+
+
+########################
+# Format Bash Prompt   #
+########################
 
 # Colors
 BBLACK="\033[1;30m"
