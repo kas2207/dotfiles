@@ -32,15 +32,17 @@
 
 ;;   (load-theme 'solarized-light))
 
-(use-package eclipse-theme
-  :config
-  (load-theme 'eclipse))
+;; (use-package eclipse-theme
+;;   :config
+;;   (load-theme 'eclipse))
 
-(ignore-errors
-  (cond ((eq system-type 'gnu/linux)
-         (set-frame-font "DejaVu Sans Mono"))
-        ((eq system-type 'windows-nt)
-         (set-frame-font "Lucida Sans Typewriter"))))
+;; (ignore-errors
+;;   (cond ((eq system-type 'gnu/linux)
+;;          (set-frame-font "DejaVu Sans Mono"))))
+
+(use-package tangotango-theme
+  :config (load-theme 'tangotango t))
+
 (if (eq system-type 'darwin)
     (set-face-attribute 'default nil :height 250)
   (set-face-attribute 'default nil :height 100)

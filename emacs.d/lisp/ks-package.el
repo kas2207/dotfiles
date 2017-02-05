@@ -27,6 +27,7 @@
         ks-markdown
         ks-mode-line
         ks-navigation
+        ks-neo-tree
         ks-org
         ks-project
         ks-python
