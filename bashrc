@@ -3,6 +3,18 @@
 ###############
 alias today="date +%F"
 alias update="sudo apt-get update && sudo apt-get upgrade"
+alias c="curl"
+alias f="find"
+alias g="git"
+alias gb="git branch"
+alias gbv="git branch -v"
+alias gco="git checkout"
+alias gst="git status"
+alias l="ls"
+alias la="ls -a"
+alias lh="ls -lh"
+alias ll="ls -l"
+alias r="rgrep"
 
 #########
 # Emacs #
@@ -24,7 +36,6 @@ export TERM=xterm-256color
 alias t="tmux"
 alias tk="tmux kill-ses -t"
 alias tka="tmux kill-session -a"
-
 
 ########
 # Java #
