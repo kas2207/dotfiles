@@ -17,6 +17,8 @@ alias ll="ls -l"
 alias r="rgrep"
 alias op="gnome-open"
 
+. /usr/share/autojump/autojump.sh
+
 #########
 # Emacs #
 #########
