@@ -15,6 +15,7 @@ alias la="ls -a"
 alias lh="ls -lh"
 alias ll="ls -l"
 alias r="rgrep"
+alias op="gnome-open"
 
 #########
 # Emacs #
