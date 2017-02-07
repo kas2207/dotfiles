@@ -8,6 +8,8 @@
       :bind (("C-c C-f"  . helm-projectile-find-file-dwim)
              ("C-x C-g"  . helm-projectile-grep))
       :config (helm-projectile-on)))
+  (add-to-list 'projectile-globally-ignored-directories "venv")
+  (add-to-list 'projectile-globally-ignored-directories "__pycache__")
   (use-package helm-pydoc
     :config
     (with-eval-after-load "python"
