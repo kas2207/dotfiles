@@ -1,0 +1,48 @@
+[general]
+accounts = personal, kepler
+maxsyncaccounts = 4
+pythonfile = ~/.offlineimap/config.py
+socktimeout = 60
+
+[Account personal]
+localrepository = personal-local
+remoterepository = personal-remote
+status_backend = sqlite
+# ignorelabels = \Inbox, \Starred, \Sent
+
+[Repository personal-local]
+type = Maildir
+localfolders = ~/Dropbox/mail/personal
+
+[Repository personal-remote]
+type = Gmail
+holdconnectionopen = yes
+keepalive = 60
+maxconnections = 3
+realdelete = no
+remoteuser = kyle.a.schmidt@gmail.com
+remotepassfile = ~/Dropbox/mail/personal_pass
+auth_mechanisms = PLAIN
+folderfilter = lambda foldername: foldername not in ['[Gmail]/Spam', '[Gmail]/All Mail', '[Gmail]/Starred', '[Gmail]/Important']
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+
+[Account kepler]
+localrepository = kepler-local
+remoterepository = kepler-remote
+status_backend = sqlite
+
+[Repository kepler-local]
+type = Maildir
+localfolders = ~/Dropbox/mail/kepler
+
+[Repository kepler-remote]
+type = Gmail
+holdconnectionopen = yes
+keepalive = 60
+maxconnections = 3
+realdelete = no
+remoteuser = kschmidt@keplergrp.com
+remotepassfile = ~/Dropbox/mail/kepler_pass
+folderfilter = lambda foldername: foldername not in ['[Gmail]/Spam', '[Gmail]/All Mail', '[Gmail]/Starred', '[Gmail]/Important']
+auth_mechanisms = PLAIN
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
