@@ -23,7 +23,7 @@ realdelete = no
 remoteuser = kyle.a.schmidt@gmail.com
 remotepassfile = ~/Dropbox/mail/personal_pass
 auth_mechanisms = PLAIN
-folderfilter = lambda foldername: foldername not in ['[Gmail]/Spam', '[Gmail]/All Mail', '[Gmail]/Starred', '[Gmail]/Important']
+folderfilter = lambda foldername: foldername in ['[Gmail]/All Mail', '[Gmail]/Sent Mail']
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 
 [Account kepler]
@@ -43,6 +43,6 @@ maxconnections = 3
 realdelete = no
 remoteuser = kschmidt@keplergrp.com
 remotepassfile = ~/Dropbox/mail/kepler_pass
-folderfilter = lambda foldername: foldername not in ['[Gmail]/Spam', '[Gmail]/All Mail', '[Gmail]/Starred', '[Gmail]/Important']
+folderfilter = lambda foldername: foldername in ['[Gmail]/All Mail', '[Gmail]/Sent Mail']
 auth_mechanisms = PLAIN
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt

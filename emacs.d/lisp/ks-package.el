@@ -10,6 +10,7 @@
         ks-docker
         ks-dot
         ks-editing
+        ;;ks-email
         ks-eshell
         ks-flycheck
         ks-go
