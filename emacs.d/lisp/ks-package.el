@@ -14,6 +14,7 @@
         ks-eshell
         ks-flycheck
         ks-go
+        ks-haskell
         ks-helm
         ks-help
         ks-html
