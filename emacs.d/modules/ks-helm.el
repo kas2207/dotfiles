@@ -8,6 +8,7 @@
       :bind (("C-c C-f"  . helm-projectile-find-file-dwim)
              ("C-x C-g"  . helm-projectile-grep))
       :config (helm-projectile-on)))
+  (require 'projectile)
   (add-to-list 'projectile-globally-ignored-directories "venv")
   (add-to-list 'projectile-globally-ignored-directories "__pycache__")
   (use-package helm-pydoc
@@ -51,7 +52,13 @@
   :bind (("C-s" . swiper-helm)
          ("C-r" . swiper-helm)))
 
-(use-package "helm-flx"
+(use-package helm-tramp
+  :config
+  (setq tramp-default-method "ssh")
+  (defalias 'exit-tramp 'tramp-cleanup-all-buffers)
+  (define-key global-map (kbd "C-c s") 'helm-tramp))
+
+(use-package helm-flx
   :demand t
   :config
   (with-eval-after-load "helm"
