@@ -32,6 +32,11 @@ alias ek="emacsclient -e '(kill-emacs)'"
 # Terminal #
 ############
 export TERM=xterm-256color
+shopt -s histappend
+shopt -s histreedit
+shopt -s histverify
+HISTCONTROL='ignoreboth'
+PROMPT_COMMAND="history -a;history -c;history -r; $PROMPT_COMMAND"
 
 ########
 # Tmux #
