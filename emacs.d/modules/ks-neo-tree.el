@@ -1,7 +1,7 @@
 (use-package neotree
   :config
   (global-set-key [f5] 'ks/neotree-project-dir)
-  (setq neo-theme (if (display-graphic-p) 'arrow))
+  (setq neo-theme 'arrow)
   ;; 'icons
   (setq neo-smart-open t)
   (setq neo-hidden-regexp-list '("^\\." "\\.cs\\.meta$" "\\.pyc$" "~$" "^#.*#$" "\\.elc$" "__pycache__" "venv")))
