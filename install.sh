@@ -8,7 +8,7 @@
 ##############################################################################
 dir=~/dotfiles
 olddir=~/dotfiles_old
-files="bashrc screenrc vimrc gnus tmux.conf"  # list of files/folders to symlink in homedir
+files="bashrc screenrc vimrc gnus tmux.conf pylintrc"  # list of files/folders to symlink in homedir
 emacs_files="emacs.d" # future list of files/folder to symlink in emacs.d
 
 ##############################################################################

@@ -1,0 +1,6 @@
+[user]
+	name = k-schmidt
+	email = kyle.a.schmidt@gmail.com
+	signingkey = 1D8D8B23
+[merge "ours"]
+	driver = true
