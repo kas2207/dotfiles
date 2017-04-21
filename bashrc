@@ -62,6 +62,13 @@ export PATH=$PATH:~/kyleschmidt/appengine-java-sdk-1.9.48/bin/
 export PATH=$PATH/bin/lein
 
 ##########
+# Python #
+##########
+export PATH="/home/kyleschmidt/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+##########
 # Kepler #
 ##########
 # Openvpn
