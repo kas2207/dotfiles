@@ -61,18 +61,12 @@ export PATH=$PATH:~/kyleschmidt/appengine-java-sdk-1.9.48/bin/
 # Leiningen
 export PATH=$PATH/bin/lein
 
-##########
-# Python #
-##########
-export PATH="/home/kyleschmidt/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 ##########
 # Kepler #
 ##########
 # Openvpn
-alias kvpn="sudo openvpn --config /home/kyleschmidt/kyleschmidt.conf"
+alias kvpn="sudo openvpn --config /home/kyleschmidt/openvpn/kschmidt.conf"
 
 # Activate Virtualenv
 alias svba="source venv/bin/activate"
